@@ -1,6 +1,7 @@
 # Negot101
 
 A webapp for explaining negotiation concepts interactively.
+Made with Angular and Angular CLI 16.2.1.
 
 ## Development server
 
