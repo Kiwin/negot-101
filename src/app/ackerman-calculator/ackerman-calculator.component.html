@@ -1,0 +1,38 @@
+<label>
+  I want to
+  <button (click)="toggleIsSelling()">
+    <span [ngClass]="{ bold: isBuying() }">Buy</span>
+    / <span [ngClass]="{ bold: isSelling() }">Sell</span>
+  </button>
+  something to $
+  <input
+    #searchBox
+    type="number"
+    (input)="setTargetValue(searchBox.value)"
+    value="{{ targetValue }}"
+    placeholder="{{ defaultTargetValue }}"
+    (focusout)="setTargetValueToDefaultIfEmpty()"
+  />
+</label>
+
+<p>
+  Having set your target <span *ngIf="isSelling()">selling</span
+  ><span *ngIf="isBuying()">buying</span> price to ${{ targetValue }}
+  makes your offset increments:
+</p>
+
+<table>
+  <tr class="header-row">
+    <td>Round</td>
+    <td>Offer</td>
+    <td>% of target price</td>
+  </tr>
+  <tr *ngFor="let priceOffset of priceOffsets; let i = index">
+    <td>{{ i + 1 }}</td>
+    <td style="text-align: left">
+      <span class="highlight">${{ priceOffset.offsetPrice }}</span>
+      <span *ngIf="i === 3"> + a nonmonetary gift.</span>
+    </td>
+    <td>{{ priceOffset.offsetPercentage }}%</td>
+  </tr>
+</table>

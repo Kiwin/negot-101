@@ -1,1 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --text-color: #e3e3e3;
+  --bg-color: #18324d;
+  --bg2-color: hsl(211, 52%, 15%);
+  font-size: 18px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.highlight {
+  background-color: #f8f8ff;
+  color: #b30000;
+  padding: 0 4px;
+  border-radius: 0.25rem;
+}
+
+h1 {
+  text-decoration-line: underline;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  background-color: var(--bg2-color);
+
+  padding: 1rem;
+  border-bottom: var(--bg-color) dashed 0.25rem;
+  border-top: var(--bg-color) dashed 0.25rem;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+table,
+tr {
+  border: var(--text-color) solid 3px;
+}
+tr.header-row > td {
+  border-bottom: var(--text-color) solid 3px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+tr > td {
+  margin: 0;
+  padding: 0.2rem 1rem;
+  border-left: var(--text-color) solid 1px;
+  border-bottom: var(--text-color) solid 1px;
+  text-align: center;
+}
